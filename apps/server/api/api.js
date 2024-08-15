@@ -5,6 +5,7 @@ import userService from "../services/user.service.js";
 import login from "./auth/login.js";
 import signUp from "./auth/signup.js";
 import createChat from "./chat/createOne.js";
+import getAllByUser from "./chat/getAllByUser.js";
 import getAllUsers from "./user/getAllUsers.js";
 import getUser from "./user/getUser.js";
 
@@ -16,7 +17,8 @@ const apiRoutes = (Router) => {
   apiRouter.use(API_PATHS.USER, getUser(Router, userService.getOne));
   apiRouter.use(API_PATHS.USER, getAllUsers(Router, userService.getAll));
 
-  apiRouter.use(API_PATHS.CHAT, createChat(Router, chatSerivice.getAll));
+  apiRouter.use(API_PATHS.CHAT, createChat(Router, chatSerivice.create));
+  apiRouter.use(API_PATHS.CHAT, getAllByUser(Router, chatSerivice.getByUser));
 
   return apiRouter;
 };
