@@ -27,10 +27,20 @@ const authService = {
   },
   login: async (req, res) => {
     try {
-      const isUserExist = await User.findOne(req.body);
+      const userByEmail = await User.findOne({ email: req.body.email });
+      let isPasswordCorrect;
 
-      if (isUserExist.error === undefined) {
-        const token = jwt.sign({ isUserExist }, SECRET);
+      if (userByEmail.error === undefined) {
+        isPasswordCorrect = await bcrypt.compare(
+          req.body.password,
+          userByEmail.password,
+        );
+      } else {
+        return res.status(400).send({ error: "user isn't exist" });
+      }
+
+      if (isPasswordCorrect) {
+        const token = jwt.sign({ userByEmail }, SECRET);
         return res
           .status(200)
           .send({ message: "user logged in successfully", token });
