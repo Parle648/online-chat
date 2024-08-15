@@ -13,6 +13,19 @@ const SCHEMAS = {
       password: joi.string().required(),
     }),
   },
+  CHAT: {
+    CREATE: joi.object({
+      lastMessage: joi.string().required().allow(""),
+      users: joi
+        .array()
+        .items(joi.string().pattern(/^[0-9a-fA-F]{24}$/))
+        .default([]),
+      messages: joi
+        .array()
+        .items(joi.string().pattern(/^[0-9a-fA-F]{24}$/))
+        .default([]),
+    }),
+  },
 };
 
 export default SCHEMAS;
