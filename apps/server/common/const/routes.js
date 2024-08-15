@@ -5,6 +5,7 @@ const API_PATHS = {
     SIGN_UP: "/auth/sign-up",
   },
   CHAT: "/chats",
+  MESSAGE: "/messages",
 };
 
 export default API_PATHS;

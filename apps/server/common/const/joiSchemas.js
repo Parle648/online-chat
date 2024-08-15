@@ -26,6 +26,16 @@ const SCHEMAS = {
         .default([]),
     }),
   },
+  MESSAGE: {
+    CRETAE: joi.object({
+      text: joi.string().required(),
+      writerId: joi.string().required(),
+      chat: joi
+        .string()
+        .pattern(/^[0-9a-fA-F]{24}$/)
+        .required(),
+    }),
+  },
 };
 
 export default SCHEMAS;
