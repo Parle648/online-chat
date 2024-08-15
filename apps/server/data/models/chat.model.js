@@ -11,6 +11,14 @@ const chatSchema = mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
+        default: [],
+      },
+    ],
+    messages: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Messages",
+        default: [],
       },
     ],
   },

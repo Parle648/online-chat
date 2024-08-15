@@ -6,12 +6,16 @@ const app = express();
 
 app.use(express.json());
 
+const dbURI =
+  "mongodb://localhost:27017/?directConnection=true&authSource=mongodb";
+
 mongoose
-  .connect(
-    "mongodb://localhost:27017/?directConnection=true&authSource=mongodb",
-  )
+  .connect(dbURI)
   .then(() => {
-    console.log("databse connected successfully");
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Connection error:", err);
   });
 
 app.listen(3001, () => {
