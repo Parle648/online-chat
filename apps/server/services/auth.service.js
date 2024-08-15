@@ -14,7 +14,7 @@ const authService = {
       });
 
       if (createdUser.error === undefined) {
-        const token = jwt.sign({ createdUser }, SECRET);
+        const token = jwt.sign({ ...createdUser }, SECRET);
         return res
           .status(201)
           .send({ message: "user created successfully", token });
@@ -40,7 +40,7 @@ const authService = {
       }
 
       if (isPasswordCorrect) {
-        const token = jwt.sign({ userByEmail }, SECRET);
+        const token = jwt.sign({ ...userByEmail }, SECRET);
         return res
           .status(200)
           .send({ message: "user logged in successfully", token });

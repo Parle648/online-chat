@@ -1,7 +1,9 @@
+import isUserAuthorized from "../../middlewares/isAuthorized.middleware.js";
+
 const getAllByUser = (Router, service) => {
   const router = Router();
 
-  router.get("/", (req, res) => {
+  router.get("/", isUserAuthorized(), (req, res) => {
     return service(req, res);
   });
 
