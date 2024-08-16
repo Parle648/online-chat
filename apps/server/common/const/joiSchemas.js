@@ -35,6 +35,9 @@ const SCHEMAS = {
         .pattern(/^[0-9a-fA-F]{24}$/)
         .required(),
     }),
+    DELETE: joi.object({
+      id: joi.string().required(),
+    }),
   },
 };
 
