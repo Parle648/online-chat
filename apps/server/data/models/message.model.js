@@ -12,7 +12,8 @@ const messageSchema = mongoose.Schema(
       default: false,
     },
     writerId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       require: true,
     },
     chat: {

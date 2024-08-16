@@ -13,6 +13,19 @@ const messageService = {
       return res.status(500).send({ message: "Internal server error" });
     }
   },
+  delete: async (req, res) => {
+    try {
+      const { id: messageId } = req.params;
+
+      const deletedMessage = await Message.findByIdAndDelete(messageId);
+
+      return res
+        .status(200)
+        .send({ message: "Message was deleted successfully", deletedMessage });
+    } catch (error) {
+      return res.status(500).send({ message: "Internal server error" });
+    }
+  },
 };
 
 export default messageService;

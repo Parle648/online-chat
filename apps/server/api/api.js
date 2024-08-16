@@ -8,6 +8,7 @@ import signUp from "./auth/signup.js";
 import createChat from "./chat/createOne.js";
 import getAllByUser from "./chat/getAllByUser.js";
 import createMessage from "./message/createMessage.js";
+import deleteMessage from "./message/deleteMessage.js";
 import getAllUsers from "./user/getAllUsers.js";
 import getUser from "./user/getUser.js";
 
@@ -25,6 +26,11 @@ const apiRoutes = (Router) => {
   apiRouter.use(
     API_PATHS.MESSAGE,
     createMessage(Router, messageService.createOne),
+  );
+
+  apiRouter.use(
+    API_PATHS.MESSAGE,
+    deleteMessage(Router, messageService.delete),
   );
 
   return apiRouter;
