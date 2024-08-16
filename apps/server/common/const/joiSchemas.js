@@ -38,6 +38,12 @@ const SCHEMAS = {
     DELETE: joi.object({
       id: joi.string().required(),
     }),
+    UPDATE_PARAMS: joi.object({
+      id: joi.string().required(),
+    }),
+    UPDATE_BODY: joi.object({
+      text: joi.string().required(),
+    }),
   },
 };
 
