@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2024 by original authors @ fontello.com</metadata>
+<defs>
+<font id="chat" horiz-adv-x="1000" >
+<font-face font-family="chat" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="garbage_icon" unicode="&#xe800;" d="M750-67h-500v584h-83v-571c0-46 37-96 83-96h500c46 0 83 50 83 96v571h-83v-584z m-125 750v84h-250v-84h-292v-83h834v83h-292z m-250-250v-416h83v416h-83z m167 0v-416h83v416h-83z" horiz-adv-x="1000" />
+
+<glyph glyph-name="search-icon" unicode="&#xe801;" d="M433 114c-167 0-305 136-305 305 0 167 136 304 305 304s305-135 305-304c-2-169-138-305-305-305l0 0z m0 564c-144 0-261-117-261-261 0-144 117-261 261-261s261 117 261 261c-2 144-119 261-261 261l0 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="chackmark" unicode="&#xe802;" d="" horiz-adv-x="1000" />
+
+<glyph glyph-name="create-account" unicode="&#xe803;" d="M363 318c-112 0-203 91-203 203s91 204 203 204 203-92 203-204-91-203-203-203z m0 365c-89 0-162-72-162-162s73-162 162-162 162 73 162 162-72 162-162 162z m343-708c-12 0-21 10-21 21 0 177-144 322-322 322s-322-144-322-322c0-11-9-20-20-20s-21 9-21 20c0 200 163 363 363 363s363-163 363-363c0-11-9-21-20-21z m274 407h-320c-12 0-21 9-21 20s9 21 21 21h320c11 0 20-9 20-21s-9-20-20-20z m-160-160c-12 0-21 9-21 21v319c0 12 9 21 21 21 11 0 20-9 20-21v-319c0-12-9-21-20-21z" horiz-adv-x="1000" />
+
+<glyph glyph-name="edit-pen" unicode="&#xe804;" d="M500 17h375m-187 687a88 88 0 0 0 125-125l-521-521-167-41 42 166 521 521z" horiz-adv-x="1000" />
+
+<glyph glyph-name="send" unicode="&#xe805;" d="" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>
