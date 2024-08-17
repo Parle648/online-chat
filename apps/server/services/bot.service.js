@@ -1,4 +1,5 @@
 import Bot from "../data/models/bot.model.js";
+import Message from "../data/models/message.model.js";
 
 const botService = {
   create: async (req, res) => {
@@ -32,7 +33,11 @@ const botService = {
   },
   delete: async (req, res) => {
     try {
-      return res.status(201).send({ message: "Bot deleted" });
+      const botId = req.params.id;
+      const deletedBot = await Bot.findByIdAndDelete(botId);
+      // todo delete all messages
+      // const deletedMessages = await Message.deleteMany({})
+      return res.status(201).send({ message: "Bot deleted", deletedBot });
     } catch (error) {
       return res.status(500).send({ message: "Internal server error", error });
     }
