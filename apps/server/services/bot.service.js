@@ -16,7 +16,16 @@ const botService = {
   },
   update: async (req, res) => {
     try {
-      return res.status(201).send({ message: "Bot updated" });
+      const updatedBot = await Bot.findOneAndUpdate(
+        { _id: req.params.id },
+        req.body,
+      );
+
+      if (updatedBot === null) {
+        return res.status(403).send({ message: "Bad request" });
+      }
+
+      return res.status(201).send({ message: "Bot updated", updatedBot });
     } catch (error) {
       return res.status(500).send({ message: "Internal server error" });
     }

@@ -7,6 +7,7 @@ import userService from "../services/user.service.js";
 import login from "./auth/login.js";
 import signUp from "./auth/signup.js";
 import createBot from "./bot/createBot.js";
+import updateBot from "./bot/updateBot.js";
 import createChat from "./chat/createOne.js";
 import deleteChat from "./chat/deleteChat.js";
 import getAllByUser from "./chat/getAllByUser.js";
@@ -47,6 +48,8 @@ const apiRoutes = (Router) => {
   );
 
   apiRouter.use(API_PATHS.BOT, createBot(Router, botService.create));
+
+  apiRouter.use(API_PATHS.BOT, updateBot(Router, botService.update));
 
   return apiRouter;
 };
