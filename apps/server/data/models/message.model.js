@@ -9,6 +9,12 @@ const messageSchema = mongoose.Schema(
     isReaded: {
       type: Boolean,
       require: true,
+      default: false,
+    },
+    writerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      require: true,
     },
     chat: {
       type: mongoose.Schema.Types.ObjectId,
