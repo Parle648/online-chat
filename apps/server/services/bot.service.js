@@ -35,8 +35,7 @@ const botService = {
     try {
       const botId = req.params.id;
       const deletedBot = await Bot.findByIdAndDelete(botId);
-      // todo delete all messages
-      // const deletedMessages = await Message.deleteMany({})
+      await Message.deleteMany({ chat: botId });
       return res.status(201).send({ message: "Bot deleted", deletedBot });
     } catch (error) {
       return res.status(500).send({ message: "Internal server error", error });

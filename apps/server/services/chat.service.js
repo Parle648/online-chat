@@ -17,7 +17,7 @@ const chatSerivice = {
       const { id: chatId } = req.params;
 
       const deletedChat = await Chat.findByIdAndDelete(chatId);
-      // const deletedMessage = await Message.
+      await Message.deleteMany({ chat: chatId });
 
       return res
         .status(200)
