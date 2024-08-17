@@ -15,6 +15,22 @@ const userService = {
       return res.status(500).send({ error });
     }
   },
+  update: async (req, res) => {
+    try {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: req.params.id },
+        { ...req.body },
+      );
+
+      if (updatedUser === null) {
+        return res.status(403).send({ message: "User isn't exists" });
+      }
+
+      return res.status(200).send({ message: "User updated", updatedUser });
+    } catch (error) {
+      return res.status(500).send({ message: "Internal server error" });
+    }
+  },
   getAll: async (req, res) => {
     try {
       console.log(req.query);

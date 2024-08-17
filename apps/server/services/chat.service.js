@@ -1,4 +1,5 @@
 import Chat from "../data/models/chat.model.js";
+import Message from "../data/models/message.model.js";
 
 const chatSerivice = {
   create: async (req, res) => {
@@ -7,6 +8,20 @@ const chatSerivice = {
       return res
         .status(201)
         .send({ message: "chat was created successfully", createdChat });
+    } catch (error) {
+      return res.status(500).send({ error });
+    }
+  },
+  delete: async (req, res) => {
+    try {
+      const { id: chatId } = req.params;
+
+      const deletedChat = await Chat.findByIdAndDelete(chatId);
+      // const deletedMessage = await Message.
+
+      return res
+        .status(200)
+        .send({ message: "Chat delete successfully", deletedChat });
     } catch (error) {
       return res.status(500).send({ error });
     }

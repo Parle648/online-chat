@@ -25,6 +25,9 @@ const SCHEMAS = {
         .items(joi.string().pattern(/^[0-9a-fA-F]{24}$/))
         .default([]),
     }),
+    DELETE: joi.object({
+      id: joi.string().required(),
+    }),
   },
   MESSAGE: {
     CRETAE: joi.object({
@@ -44,6 +47,19 @@ const SCHEMAS = {
     UPDATE_BODY: joi.object({
       text: joi.string().required(),
     }),
+  },
+  USER: {
+    UPDATE: {
+      BODY: joi.object({
+        name: joi.string(),
+        surname: joi.string(),
+        email: joi.string().email(),
+        password: joi.string(),
+      }),
+      PARAMS: joi.object({
+        id: joi.string().required(),
+      }),
+    },
   },
 };
 
