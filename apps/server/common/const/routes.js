@@ -5,6 +5,7 @@ const API_PATHS = {
     SIGN_UP: "/auth/sign-up",
   },
   CHAT: "/chats",
+  BOT: "/bots",
   MESSAGE: "/messages",
 };
 

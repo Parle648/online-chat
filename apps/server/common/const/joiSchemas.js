@@ -61,6 +61,30 @@ const SCHEMAS = {
       }),
     },
   },
+  BOT: {
+    CREATE: {
+      BODY: joi.object({
+        bot_name: joi.string().required(),
+        bot_surname: joi.string().required(),
+        user: joi.string().required(),
+      }),
+    },
+    UPDATE: {
+      BODY: joi.object({
+        bot_name: joi.string(),
+        bot_surname: joi.string(),
+        user: joi.string(),
+      }),
+      PARAMS: joi.object({
+        id: joi.string().required(),
+      }),
+    },
+    DELETE: {
+      PARAMS: joi.object({
+        id: joi.string().required(),
+      }),
+    },
+  },
 };
 
 export default SCHEMAS;

@@ -1,10 +1,12 @@
 import API_PATHS from "../common/const/routes.js";
 import authService from "../services/auth.service.js";
+import botService from "../services/bot.service.js";
 import chatSerivice from "../services/chat.service.js";
 import messageService from "../services/message.service.js";
 import userService from "../services/user.service.js";
 import login from "./auth/login.js";
 import signUp from "./auth/signup.js";
+import createBot from "./bot/createBot.js";
 import createChat from "./chat/createOne.js";
 import deleteChat from "./chat/deleteChat.js";
 import getAllByUser from "./chat/getAllByUser.js";
@@ -43,6 +45,8 @@ const apiRoutes = (Router) => {
     API_PATHS.MESSAGE,
     changeMessage(Router, messageService.update),
   );
+
+  apiRouter.use(API_PATHS.BOT, createBot(Router, botService.create));
 
   return apiRouter;
 };
