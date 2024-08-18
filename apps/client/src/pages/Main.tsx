@@ -1,3 +1,4 @@
+import ChatBlock from "../widgets/ChatBlock/ChatBlock";
 import Chats from "../widgets/Chats/Chats";
 import SearchBlock from "../widgets/SearchBlock/SearchBlock";
 
@@ -8,6 +9,7 @@ const Main = () => {
         <SearchBlock />
         <Chats />
       </div>
+      <ChatBlock />
     </main>
   );
 };
