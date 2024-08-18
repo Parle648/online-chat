@@ -6,7 +6,7 @@ const login = async (data: { email: string; password: string }) => {
   console.log(data);
 
   const createdUser = await axios.post(
-    "https://online-chat-6cj5.onrender.com/reenbit-api/auth/login",
+    "http://localhost:3001/reenbit-api/auth/login",
     { ...data },
   );
 

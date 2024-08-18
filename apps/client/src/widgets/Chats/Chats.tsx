@@ -1,11 +1,6 @@
-import { useEffect } from "react";
 import ChatEntity from "../../entities/ChatEntity/ChatEntity";
-import getAllByUser from "./api/findAllByFilters";
 
 const Chats = () => {
-  useEffect(() => {
-    getAllByUser();
-  }, []);
   return (
     <div>
       <ChatEntity
