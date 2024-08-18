@@ -1,1 +1,7 @@
 @import "./shared/assets/iconfont/css/chat.css";
+
+.main-page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}

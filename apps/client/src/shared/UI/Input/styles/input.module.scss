@@ -1,0 +1,33 @@
+.block {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #aaa;
+  }
+}

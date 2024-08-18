@@ -1,8 +1,16 @@
 import express from "express";
 import apiRoutes from "./api/api.js";
 import mongoose from "mongoose";
+import cors from "cors";
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  }),
+);
 
 app.use(express.json());
 
