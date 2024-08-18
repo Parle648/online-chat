@@ -9,7 +9,7 @@ const createUser = async (data: {
   password: string;
 }) => {
   const createdUser = await axios.post(
-    "http://localhost:3001/reenbit-api/auth/sign-up",
+    "https://online-chat-6cj5.onrender.com/reenbit-api/auth/sign-up",
     { ...data },
   );
 
