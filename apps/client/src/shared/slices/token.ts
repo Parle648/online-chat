@@ -27,7 +27,7 @@ const token = createSlice({
   name: "token",
   initialState: initialValue,
   reducers: {
-    updatetoken(state, action: PayloadAction<string>) {
+    updatetoken(state, action: PayloadAction<string | null>) {
       state.token = action.payload;
     },
   },
