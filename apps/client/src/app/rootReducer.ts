@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import bookings from "../shared/slices/bookings";
+import token from "../shared/slices/token";
 
 const rootReducer: any = combineReducers({
-  booking: bookings,
+  token: token,
 });
 
 export { rootReducer };

@@ -1,10 +1,19 @@
+import User from "../entities/User/User";
+import CreateBotForm from "../features/CreateBotForm/CreateBotForm";
+import ChatBlock from "../widgets/ChatBlock/ChatBlock";
+import Chats from "../widgets/Chats/Chats";
+import SearchBlock from "../widgets/SearchBlock/SearchBlock";
+
 const Main = () => {
   return (
     <main className="main-page">
-      Main page
-      <div className="span3" title="Code: 0xe803">
-        <i className="demo-icon icon-create-account">&#xe803;</i>
+      <div style={{ width: "350px" }}>
+        <User />
+        <SearchBlock />
+        <CreateBotForm />
+        <Chats />
       </div>
+      <ChatBlock />
     </main>
   );
 };
