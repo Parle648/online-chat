@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 const dbURI =
-  "mongodb://localhost:27017/?directConnection=true&authSource=mongodb";
+  "mongodb+srv://morozovalex842:<password>@cluster0.uo8hh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(dbURI)
