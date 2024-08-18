@@ -10,7 +10,7 @@ const Input = ({
   name: string;
 }) => {
   return (
-    <>
+    <div className={styles.block}>
       <h3 className={styles.title}>{title}</h3>
       <input
         className={styles.input}
@@ -18,7 +18,7 @@ const Input = ({
         type="text"
         placeholder={placeholder}
       />
-    </>
+    </div>
   );
 };
 
